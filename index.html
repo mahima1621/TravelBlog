@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <title>Responsive Navbar | CodingNepal</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="travel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <style>
+  *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: montserrat;
+  }
+  .container{
+    margin-left:10%;
+    margin-top: 2%;
+  
+  }
+  nav{
+  background-image:url('images/menu-bg.jpg');
+    height: 80px;
+    width: 100%;
+    
+  }
+  
+  
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+  
+  }
+  a.active,a:hover{
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+      float:right;
+  
+    }
+    nav ul li a{
+      font-size: 16px;
+        }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+      float:left;
+      margin-left: 10%;
+    }
+    ul{
+      position: absolute;
+      width: 100%;
+      height: 30vh;
+      background-image:url('images/menu-bg.jpg');
+      opacity:0.5;
+      top: 80px;
+      left: -100%;
+      padding-left:8%;
+  
+    
+    }
+    
+    
+    
+    nav ul li{
+      display: block;
+      margin: 30px 0;
+      line-height: 10px;
+  
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color:blue;
+    
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+
+  @media (max-width: 600px){ 
+  .visited{
+    padding-bottom:3%;
+  }
+}
+  @media (max-width: 1200px){ 
+  .visited{
+    padding-bottom:3%;
+  }
+}
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/*map*/
+#maps {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+  margin-bottom: 0;
+}
+
+</style>
+<script>
+ var locations = [
+            ['Raj Ghat', 28.648608, 77.250925, 1],
+            ['Purana Qila', 28.618174, 77.242686, 2],
+            ['Red Fort', 28.663973, 77.241656, 3],
+            ['India Gate', 28.620585, 77.228609, 4],
+            ['Jantar Mantar', 28.636219, 77.213846, 5],
+            ['Akshardham', 28.622658, 77.277704, 6],
+            ['Janakpuri',28.619570, 77.088104,7],
+            ['Gharoli',28.619570, 77.088104,8],
+            ['Palam',8.099403, 77.434181,9]
+          ];
+
+        function InitMap() {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: new google.maps.LatLng(28.614884, 77.208917),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+
+           
+        }
+</script>
+  </head>
+  <body onload="InitMap();">
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a><img src="images/trawellogo.png"></a></li></label>  
+      <ul>
+        <li><a href="#">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="tours.html">Tour</a></li>
+       <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="home">
+      <img src="images/logo.jpg" style="width:100%;height:87vh;">
+     </div>
+
+    <div class="container">
+
+      <div class="image">
+        <img src="images/cnn.png" style="margin:5%;width:85%;">
+      </div>
+
+      <h2 style="text-align:center; padding-bottom:5%;">About Me</h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <img  src="images/trawelabout.jpg"   alt="Card image" class="card-img-top" style="width:100%;height:100%;">
+          </div>
+        </div>
+        <div class="column">
+          <div class="card " >  
+            <div class="about" >
+              <p>Keeping one’s self going is a difficult thing to do. There are a million distractions that occur every day and that can mean that we do not stay on track with what we should be doing. Self-motivation is something that does not come easy to a lot of people and that means that there are some steps that need to be taken before you can become motivated to the fullest extent.<br><br>
+                  Of course, there are some other matters that first need to be taken care of. If there are a lot of distractions that keep you from doing what you need to be doing then you need to make some changes. This is really the first step towards becoming self-motivated in any form.</p><br>
+                <button>READ MY BLOG</button>
+                <button style="background-color:white;color:teal;margin-left:2%;border:1px solid teal;">LEARN MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="text-align: center;margin-bottom:3%;">TOP DESTINATION</h3>
+        <div class="row2">
+          <div class="column2">
+            <div class="card2">
+              <a target="_blank" href="images/africa.jpg">
+              <img  src="images/africa.jpg"   alt="Card image" class="card-img-top" style="width:100%;height:100%;">
+            </a>
+            </div>
+          </div>
+
+          <div class="column2">
+            <div class="card2">
+              <img  src="images/asia.jpg"   alt="Card image" class="card-img-top" style="width:100%;height:100%;">
+            </div>
+          </div>
+
+          <div class="column2">
+            <div class="card2">
+              <img  src="images/europe.jpg"   alt="Card image" class="card-img-top" style="width:100%;height:100%;">
+            </div>
+          </div>
+        </div>
+
+      <div class="visited">
+        <div class="rows3">
+
+            <div class="column3">
+              <div class="card3">
+                <h3>6</h3>
+                <p>Continents visited</p>
+              </div>
+            </div>
+
+            <div class="column3">
+              <div class="card3">
+                <h3>54</h3>
+                <p>Countries visited</p>
+              </div>
+            </div>
+
+            <div class="column3">
+              <div class="card3">
+                <h3>26k</h3>
+                <p>Miles traveled</p>
+              </div>
+            </div>
+
+            <div class="column3">
+              <div class="card3">
+                <h3>678</h3>
+                <p>Days Travelling</p>
+              </div>
+            </div>
+
+            <div class="column3">
+              <div class="card3">
+                <h3>216</h3>
+                <p>Stories Written</p>
+              </div>
+            </div>
+        </div>
+      </div>
+<h2 style="text-align: center;">Where I have been</h2></div>
+      <div id="map" style="height: 500px; margin-bottom: 5%;">
+      </div>
+  
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4fot9NI_MPykmbjNXd7eKkL_7pi0ktRI&callback=initMap&libraries=&v=weekly" async ></script>
+      </script>
+    </div>
+<footer>
+  <footer id="pageFooter" style="text-align:center;background-image:url('images/menu-bg.jpg');color:#fff;line-height:15vh;word-spacing: .3em;">&copy 2021 Mahima. All rights reserved. Privacy Policy</footer>
+
+</footer>
+
+
+
+  </body>
+</html>

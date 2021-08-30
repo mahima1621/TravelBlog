@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	   <meta charset="utf-8">
+    <!-- <title>Responsive Navbar | CodingNepal</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="travel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<title></title>
+	<style>
+				
+		 *{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+.container{
+  margin-left:10%;
+  margin-top: 2%;
+
+}
+nav{
+background-image:url('images/menu-bg.jpg');
+  height: 80px;
+  width: 100%;
+  
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+
+}
+a.active,a:hover{
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+    float:right;
+
+  }
+  nav ul li a{
+    font-size: 16px;
+      }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+    float:left;
+    margin-left: 10%;
+  }
+  ul{
+    position: absolute;
+    width: 100%;
+    height: 40vh;
+    background-image:url('images/menu-bg.jpg');
+    opacity:0.5;
+    top: 80px;
+    left: -100%;
+    padding-left:10%;
+
+  
+  }
+  nav ul li{
+    display: block;
+    margin: 30px 0;
+    line-height: 10px;
+
+  } 
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color:blue;
+  
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+h2{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size:1em;
+}
+
+h2:before,
+h2:after {
+    content: '';
+    border-top: 1px solid #ccc;
+    margin: 0 20px 0 0;
+    flex: 1 0 20px;
+}
+
+h2:after {
+    margin: 0 0 0 20px;
+}
+.card2{
+ 
+  text-align: center;
+  margin-bottom: 5%;
+  text-align: justify;
+
+}
+/* Float four columns side by side */
+.column2{
+  float: left;
+  width: 33%;
+  padding: 0 5px;
+  cursor:pointer;
+  padding-right: 1%;
+
+}
+
+
+/* Remove extra left and right margins, due to padding */
+
+
+/* Clear floats after the columns */
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+
+@media screen and (max-width: 900px) {
+  .column2 {
+    width: 50%;
+    display: block;
+    margin-bottom: 0px;
+
+  }
+}
+
+
+/*.image1{
+      position:relative;
+      height:500px;
+    
+      overflow:hidden;
+      background:url('images/destine.jpg') no-repeat center;
+      background-size:cover;
+    
+    }
+    .container1{
+      position:absolute;
+      top:50%;
+      left:50%;
+      color:white;
+        overflow:hidden;
+        transform: translate(-50%,-50%);
+        text-align: center;
+
+    }
+    */
+	</style>
+</head>
+<body>
+	  <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a><img src="images/trawellogo.png"></a></li></label>  
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="tours.html">Tours</a></li>
+       <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+<div >
+<img src="images/destine.jpg" style="width:100%;height:85vh;">
+<h3 style="text-align: center;margin-bottom:-5%;padding-top: 5%;position:static;">DESTINATION</h3>
+<h1 class="desti" style="position:relative;bottom:50vh;color:white;text-align:center;font-size:4em;">DESTINATIONS</h1>
+
+<div class="container">
+
+<div class="row2">
+  <div class="column2">
+    <div class="card2">
+       <img  src="images/africa.jpg"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+        
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="card2">
+       <img  src="images/asia.jpg"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="card2">
+       <img  src="images/europe.jpg"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+    </div>
+  </div>
+
+  
+<div class="column2">
+    <div class="card2">
+       <a target="_blank" href="images/africa.jpg">
+       <img  src="images/france.jfif"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+     </a>
+    </div>
+  </div>
+  <div class="column2">
+    <div class="card2">
+       <img  src="images/italy.jpg"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="card2">
+       <img  src="images/greece.jfif"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+    </div>
+  </div>
+  <div class="column2">
+    <div class="card2">
+       <a target="_blank" href="images/maldives.jpg">
+       <img  src="images/egypt.jfif"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+     </a>
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="card2">
+       <img  src="images/uk.jpg"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="card2">
+       <img  src="images/tajmahal.jpg"   alt="Card image" class="card-img-top" style="width:75%;height:30vh;">
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<footer>
+  <footer id="pageFooter" style="text-align:center;margin-top: 15%;background-image:url('images/menu-bg.jpg');color:#fff;line-height:15vh;word-spacing: .3em;">&copy 2021 Mahima. All rights reserved. Privacy Policy</footer>
+
+</footer>
+</body>
+</html>
